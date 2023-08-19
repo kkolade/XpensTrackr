@@ -11,7 +11,7 @@ module BillsHelper
     end
     item_amount
   end
-  
+
   def calculate_total_budget
     @bills.sum { |bill| calculate_item_amount(bill) }
   end
