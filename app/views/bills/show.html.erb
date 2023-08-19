@@ -1,10 +1,38 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @bill %>
+<div class='login'>
+    <%= link_to bills_path do %>
+      <i class="fa-solid fa-arrow-left fa-2x white"></i>
+    <% end %>
+    <p style='margin-top: auto; margin-buttom: auto;'>TRANSACTIONS</P>
+    <div></div>
+    
+  </div>
 
-<div>
-  <%= link_to "Edit this bill", edit_bill_path(@bill) %> |
-  <%= link_to "Back to bills", bills_path %>
+<div class='page-container', style='background-color: white;'>
+  <div class='transaction-title'>
+    <%= image_tag "#{@bill.icon}.png", alt: "category icon", class: 'category-icon' %>
+    <h3 class='text-1'><%= @bill.name %></h3>
+  </div> 
 
-  <%= button_to "Destroy this bill", @bill, method: :delete %>
+  <p class= ''>Details expenses for <%= @bill.name %> so far. <br>
+  The total amount for <%= @bill.name %> is found below.</p>
+  <hr style='padding: 0; marging: 0 !important;'>
+    <div id="items" class='trans-container' >
+      <% item_amount = 0 %>
+      <% @items.each do |item| %>
+        <%= render items %>
+        <% item_amount += item.amount %>
+      <% end %>
+    </div>
+
+  <div class='trans-total'>
+    <p style='padding: 0; margin: 0;'>TOTAL AMOUNT</p>
+    <p  style='padding: 0; margin: 0;'>&dollar;&nbsp;<%= item_amount %></p>
+  </div>
 </div>
+
+<div style='margin: 12px;' >
+    <%= link_to "ADD A TRANSACTION", new_bill_path, class: 'btn btn-submit' %>
+</div>
+

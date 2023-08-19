@@ -29,7 +29,7 @@ class BillsController < ApplicationController
 
     respond_to do |format|
       if @bill.save
-        format.html { redirect_to root_path, notice: "Bill was successfully created." }
+        format.html { redirect_to root_path, notice: "Categrory was successfully created." }
         format.json { render :show, status: :created, location: @bill }
       else
         format.html { render :new, status: :unprocessable_entity }
