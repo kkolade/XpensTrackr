@@ -83,6 +83,7 @@ test:
 #
 production:
   <<: *default
-  database: XpensTrackr_production
-  username: XpensTrackr
-  password: <%= ENV["XPENSTRACKR_DATABASE_PASSWORD"] %>
+  url: <%= ENV[postgres://kkolade:MHMyvwOFL1lA9ayBps1vwvhwBrZBBXLq@dpg-cjgejsc1ja0c73cc9hu0-a/xpenstrackr] %>
+  database: xpenstrackr
+  username: xpenstrackr
+  password: <%= ENV[MHMyvwOFL1lA9ayBps1vwvhwBrZBBXLq] %>

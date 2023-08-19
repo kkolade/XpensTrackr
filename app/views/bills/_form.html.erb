@@ -4,7 +4,7 @@
       <h2><%= pluralize(bill.errors.count, "error") %> prohibited this category from being saved:</h2>
 
       <ul>
-        <% category.errors.each do |error| %>
+        <% bill.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
