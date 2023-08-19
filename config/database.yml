@@ -81,9 +81,4 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
-production:
-  <<: *default
-  url: <%= ENV[postgres://kkolade:MHMyvwOFL1lA9ayBps1vwvhwBrZBBXLq@dpg-cjgejsc1ja0c73cc9hu0-a/xpenstrackr] %>
-  database: xpenstrackr
-  username: xpenstrackr
-  password: <%= ENV[MHMyvwOFL1lA9ayBps1vwvhwBrZBBXLq] %>
+

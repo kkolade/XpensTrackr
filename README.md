@@ -74,7 +74,7 @@ It is my Capstone project for the RoR module
 <!-- VIDEO DEMO -->
 ## Video Demo <a name="live-demo"></a>
 
-- [Video Demo](<https://www.loom.com/share/to> be updated)
+- [Video Demo](https://www.loom.com/share/66e7963e9f3f4b0885be5ec092a46b21)
 
 <!-- GETTING STARTED -->
 
