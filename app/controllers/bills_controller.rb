@@ -5,10 +5,13 @@ class BillsController < ApplicationController
   # GET /bills or /bills.json
   def index
     @bills = Bill.all
+    @bills = Bill.includes(:items).all.order(created_at: :desc)
   end
 
   # GET /bills/1 or /bills/1.json
   def show
+    @bills = Bill.where(author_id: current_user.id)
+    @items = Item.where(bill_id: params[:id]).order(created_at: :desc)
   end
 
   # GET /bills/new
@@ -26,7 +29,7 @@ class BillsController < ApplicationController
 
     respond_to do |format|
       if @bill.save
-        format.html { redirect_to bill_url(@bill), notice: "Bill was successfully created." }
+        format.html { redirect_to root_path, notice: "Bill was successfully created." }
         format.json { render :show, status: :created, location: @bill }
       else
         format.html { render :new, status: :unprocessable_entity }

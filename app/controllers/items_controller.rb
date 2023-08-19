@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
 
   # GET /items or /items.json
   def index
-    @items = Item.all
+    @items = Item.includes(:bill).all
   end
 
   # GET /items/1 or /items/1.json
@@ -26,7 +26,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.save
-        format.html { redirect_to item_url(@item), notice: "Item was successfully created." }
+        format.html { redirect_to bill_url(@item.bill_id), notice: "Transaction was successfully created." }
         format.json { render :show, status: :created, location: @item }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -62,6 +62,7 @@ class ItemsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_item
       @item = Item.find(params[:id])
+      @item = Item.includes(:bill).find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
