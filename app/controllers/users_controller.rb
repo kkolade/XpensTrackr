@@ -10,6 +10,12 @@ class UsersController < ApplicationController
   def show
   end
 
+  def splash
+    return unless user_signed_in?
+
+    redirect_to categories_path
+  end
+
   # GET /users/new
   def new
     @user = User.new
