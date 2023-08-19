@@ -42,7 +42,7 @@ class BillsController < ApplicationController
   def update
     respond_to do |format|
       if @bill.update(bill_params)
-        format.html { redirect_to bill_url(@bill), notice: "Bill was successfully updated." }
+        format.html { redirect_to bill_url(@bill), notice: "Category was successfully updated." }
         format.json { render :show, status: :ok, location: @bill }
       else
         format.html { render :edit, status: :unprocessable_entity }
