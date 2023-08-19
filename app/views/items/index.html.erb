@@ -1,14 +1,12 @@
-<p style="color: green"><%= notice %></p>
+<h1>Transactions</h1>
 
-<h1>Items</h1>
-
-<div id="items">
+<div id="transactions">
   <% @items.each do |item| %>
     <%= render item %>
     <p>
-      <%= link_to "Show this item", item %>
+      <%= link_to "Show this transaction", item %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New item", new_item_path %>
+<%= link_to "New transaction", new_item_path %>

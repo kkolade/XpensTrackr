@@ -1,9 +1,11 @@
-<h1>New bill</h1>
+  <div class='login'>
+    <%= link_to root_path do %>
+      <i class="fa-solid fa-arrow-left fa-2x white"></i>
+    <% end %>
+    <p style='margin-top: auto; margin-buttom: auto;'>NEW CATEGORY</P>
+    <div></div>
+    
+  </div>
 
 <%= render "form", bill: @bill %>
 
-<br>
-
-<div>
-  <%= link_to "Back to bills", bills_path %>
-</div>
