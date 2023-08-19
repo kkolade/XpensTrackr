@@ -1,0 +1,67 @@
+@font-face {
+  font-family: 'proximanova-bold';
+  src: url('proximanova/proximanova-bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'proximanova-light';
+  src: url('proximanova/proximanova-light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$color_primary: #3778c2;
+$color_secondary: #434b54;
+$color_ascent: #5fb523;
+$color_white: #fff;
+$color_off-white: #e7ebf1;
+
+$font_regular: 'proximanova-light';
+$font_bold: 'proximanova-bold';
+
+:root {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: $color_secondary;
+  background-color: $color_off-white;
+  font-family: $font_regular;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+.app {
+  height: 100vh;
+  background: center center / contain no-repeat url(phone_frame_cutout.png);
+  padding-top: 84px;
+}
+
+.app-container {
+  width: 302px;
+  height: 532px;
+  margin: 0 auto;
+  border: 1px solid grey;
+}
+
+// .splash-page {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   padding: 10px;
+
+//   .splash-title {
+//     font-family: $font_bold;
+//   }
