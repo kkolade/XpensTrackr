@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   def splash
     return unless user_signed_in?
 
-    redirect_to categories_path
+    redirect_to bills_path
   end
 
   # GET /users/new
