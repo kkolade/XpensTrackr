@@ -1,0 +1,17 @@
+<div id="<%= dom_id bill %>", class='item-card' >
+  <div class='card-section-1'>
+    <%= image_tag "#{bill.icon}.png", alt: "category icon", class: 'category-icon' %>
+  </div> 
+  <p>
+    <%= bill.name %>
+  </p>
+
+  <p class='card-section-2 small'>
+    <%= bill.created_at.strftime("%d %B %Y") %>
+  </p>
+
+ <div style='text-align: right; font-weight: bold;'>
+    <p>&dollar;&nbsp;<%= calculate_item_amount(bill) %></p>
+  </div> 
+
+</div>

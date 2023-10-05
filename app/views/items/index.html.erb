@@ -1,0 +1,12 @@
+<h1>Transactions</h1>
+
+<div id="transactions">
+  <% @items.each do |item| %>
+    <%= render item %>
+    <p>
+      <%= link_to "Show this transaction", item %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New transaction", new_item_path %>

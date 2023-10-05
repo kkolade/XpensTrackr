@@ -1,0 +1,36 @@
+<%= form_with(model: item) do |form| %>
+  <% if item.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(item.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+
+      <ul>
+        <% item.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <% form.label :name %>
+    <%= form.text_field :name, class: 'form-element', placeholder: 'Name' %>
+  </div>
+
+  <div>
+    <% form.label :amount %>
+    <%= form.text_field :amount, class: 'form-element', placeholder: 'Amount' %>
+  </div>
+  
+  <div>
+    <%= form.hidden_field :author_id, value: current_user.id %>
+  </div>
+
+  <div>
+    <% @bills = Bill.where(author_id: current_user.id) %>
+    <%= form.select :bill_id, options_from_collection_for_select(@bills, :id, :name, params[:bill_id]), { prompt: "Select a Category" }, class: "form-select input-field prompt" %>
+  </div>
+
+  <div style='margin: 12px;' >
+    <%= form.submit 'Create Transaction', class: 'btn btn-submit' %>
+  </div>
+<% end %>

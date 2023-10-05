@@ -1,0 +1,32 @@
+<div class='category-container'>
+  <div id="categories">
+    <div class='login'>
+      <div class= 'bars'>
+        <span class= 'bar'></span>
+        <span class= 'bar'></span>
+        <span class= 'bar'></span>
+      </div>
+      <h2 class=''>Categories</h2>
+      <div>
+        <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-primary' %>
+      </div>
+    </div> 
+    <div class='sub-title'>
+      <p>Total Expenses</p>
+
+    <p>&dollar;&nbsp;<%= calculate_total_budget %></p> 
+
+    </div>
+    <div class='list-container'>
+      <% @bills.each do |bill| %>
+        <%= link_to bill, class: 'card-link' do %>
+          <div class='card-box'>
+            <%= render bill %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <%= link_to "New category", new_bill_path, class: 'btn btn-submit' %>
+</div>
