@@ -1,0 +1,18 @@
+databases:
+  - name: ExpensTrackr
+    databaseName: nyddwzvt
+    user: nyddwzvt
+
+services:
+  - type: web
+    name: expenstrackr
+    runtime: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: expenstrackr
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
